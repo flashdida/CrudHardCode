@@ -1,0 +1,5 @@
+/home/madik/didar_test/ShoppingSystem/Domain/obj/Debug/netcoreapp3.1/Domain.csproj.AssemblyReference.cache
+/home/madik/didar_test/ShoppingSystem/Domain/obj/Debug/netcoreapp3.1/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/madik/didar_test/ShoppingSystem/Domain/obj/Debug/netcoreapp3.1/Domain.AssemblyInfoInputs.cache
+/home/madik/didar_test/ShoppingSystem/Domain/obj/Debug/netcoreapp3.1/Domain.AssemblyInfo.cs
+/home/madik/didar_test/ShoppingSystem/Domain/obj/Debug/netcoreapp3.1/Domain.csproj.CoreCompileInputs.cache
