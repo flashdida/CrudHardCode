@@ -5,7 +5,7 @@ CRUD with a .NET 6 Web API & Entity Framework Core
 
 # Entity interface
 
-![image](https://user-images.githubusercontent.com/100695412/177339787-2e5f5089-4b85-4766-a45e-d9804dfed2f8.png)
+![image](https://user-images.githubusercontent.com/100695412/177340064-06628efa-00eb-44e3-9a55-2d1079624dfe.png)
 
 
 # Developer environment and instruments
