@@ -2,7 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "Microsoft.CSharp/4.5.0": {
+      "AutoMapper/11.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -616,10 +628,25 @@
     }
   },
   "libraries": {
-    "Microsoft.CSharp/4.5.0": {
-      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+    "AutoMapper/11.0.1": {
+      "sha512": "WIadGC1pIwbnyTubvI577p3F++Bsj9q2Q3OaAc1I0QS+JhupN1xkdrPBhI9bPIeg63zM81tZplUNYkqU1HE5jQ==",
       "type": "package",
-      "path": "microsoft.csharp/4.5.0",
+      "path": "automapper/11.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.11.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "type": "package",
+      "path": "microsoft.csharp/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -632,6 +659,7 @@
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/uap10.0.16299/_._",
         "lib/win8/_._",
@@ -641,7 +669,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -1786,27 +1814,30 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AutoMapper >= 11.0.1",
       "Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\didok\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\crudtest\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\user\\Desktop\\crudtest\\Application\\Application.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\crudtest\\Application\\obj\\",
+      "projectPath": "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Application\\Application.csproj",
+      "packagesPath": "C:\\Users\\didok\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\didok\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1815,14 +1846,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\user\\Desktop\\crudtest\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\user\\Desktop\\crudtest\\Domain\\Domain.csproj"
+            "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Domain\\Domain.csproj"
             }
           }
         }
@@ -1836,6 +1867,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[11.0.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\crudtest\\Application\\Application.csproj": {}
+    "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\crudtest\\Application\\Application.csproj": {
+    "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\crudtest\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\user\\Desktop\\crudtest\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\crudtest\\Application\\obj\\",
+        "projectPath": "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\didok\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\didok\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,14 +27,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\user\\Desktop\\crudtest\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\user\\Desktop\\crudtest\\Domain\\Domain.csproj"
+              "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Domain\\Domain.csproj"
               }
             }
           }
@@ -47,6 +48,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -66,20 +73,21 @@
         }
       }
     },
-    "C:\\Users\\user\\Desktop\\crudtest\\Domain\\Domain.csproj": {
+    "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\crudtest\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\user\\Desktop\\crudtest\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\crudtest\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\didok\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\didok\\Desktop\\uuu\\CrudHardCode\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\didok\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -88,7 +96,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "net6.0": {
