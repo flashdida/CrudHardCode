@@ -36,7 +36,7 @@ public class BaseCrudController<TEntity, TEntityDto> : ControllerBase
     }
 
     [HttpDelete]
-    public async Task<IActionResult> DeleteCategory(int id)
+    public async Task<IActionResult> Delete(int id)
     {
         await _logic.Delete(id);
         return Ok();

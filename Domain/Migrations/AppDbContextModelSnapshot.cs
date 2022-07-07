@@ -22,7 +22,7 @@ namespace Domain.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Domain.Model.Attribute", b =>
+            modelBuilder.Entity("Domain.Models.Attribute", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,20 +30,15 @@ namespace Domain.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("AttributeFields");
+                    b.ToTable("Attributes");
                 });
 
-            modelBuilder.Entity("Domain.Model.Category", b =>
+            modelBuilder.Entity("Domain.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,7 +54,30 @@ namespace Domain.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Domain.Model.Product", b =>
+            modelBuilder.Entity("Domain.Models.CategoryAttribute", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("AttributeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AttributeId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("CategoryAttributes");
+                });
+
+            modelBuilder.Entity("Domain.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -70,17 +88,14 @@ namespace Domain.Migrations
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Cost")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -89,7 +104,7 @@ namespace Domain.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Domain.Model.ProductAttributeValue", b =>
+            modelBuilder.Entity("Domain.Models.ProductAttributeValue", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -97,10 +112,10 @@ namespace Domain.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("AttributeFieldId")
+                    b.Property<int>("AttributeId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProductId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<string>("Value")
@@ -108,54 +123,63 @@ namespace Domain.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AttributeFieldId");
+                    b.HasIndex("AttributeId");
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("AttributeFieldProducts");
+                    b.ToTable("ProductAttributeValues");
                 });
 
-            modelBuilder.Entity("Domain.Model.Attribute", b =>
+            modelBuilder.Entity("Domain.Models.CategoryAttribute", b =>
                 {
-                    b.HasOne("Domain.Model.Category", "Category")
+                    b.HasOne("Domain.Models.Attribute", "Attribute")
+                        .WithMany()
+                        .HasForeignKey("AttributeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Models.Category", "Category")
+                        .WithMany("Attributes")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Attribute");
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Domain.Models.Product", b =>
+                {
+                    b.HasOne("Domain.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId");
 
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("Domain.Model.Product", b =>
+            modelBuilder.Entity("Domain.Models.ProductAttributeValue", b =>
                 {
-                    b.HasOne("Domain.Model.Category", "Category")
+                    b.HasOne("Domain.Models.Attribute", "Attribute")
                         .WithMany()
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("AttributeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("Domain.Model.ProductAttributeValue", b =>
-                {
-                    b.HasOne("Domain.Model.Attribute", "Attribute")
-                        .WithMany("AttributeFieldProducts")
-                        .HasForeignKey("AttributeFieldId");
-
-                    b.HasOne("Domain.Model.Product", "Product")
-                        .WithMany("AttributeFieldProducts")
-                        .HasForeignKey("ProductId");
+                    b.HasOne("Domain.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Attribute");
 
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Domain.Model.Attribute", b =>
+            modelBuilder.Entity("Domain.Models.Category", b =>
                 {
-                    b.Navigation("AttributeFieldProducts");
-                });
-
-            modelBuilder.Entity("Domain.Model.Product", b =>
-                {
-                    b.Navigation("AttributeFieldProducts");
+                    b.Navigation("Attributes");
                 });
 #pragma warning restore 612, 618
         }
